@@ -1,0 +1,58 @@
+{
+  "name": "Word Grid & WordSeek Bot",
+  "description": "3D Word Grid Arcade & WordSeek (Wordle 4L/5L/6L + Daily Mode) Telegram Bot built with Kurigram & MongoDB.",
+  "keywords": ["telegram", "bot", "wordgame", "wordle", "kurigram", "pyrogram", "mongodb"],
+  "env": {
+    "API_ID": {
+      "description": "Telegram API_ID from https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Telegram API_HASH from https://my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "MONGO_URI": {
+      "description": "MongoDB Atlas Connection URI",
+      "required": true
+    },
+    "DB_NAME": {
+      "description": "MongoDB Database Name",
+      "value": "WordGridBotDB",
+      "required": false
+    },
+    "SUDO_USERS": {
+      "description": "Comma-separated list of Admin Telegram User IDs",
+      "required": false
+    },
+    "SUPPORT_GROUP": {
+      "description": "Support group URL",
+      "value": "https://t.me/Telegram",
+      "required": false
+    },
+    "UPDATE_CHANNEL": {
+      "description": "Updates channel URL",
+      "value": "https://t.me/Telegram",
+      "required": false
+    },
+    "TIME_ZONE": {
+      "description": "IANA timezone for Daily WordSeek",
+      "value": "Asia/Kolkata",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

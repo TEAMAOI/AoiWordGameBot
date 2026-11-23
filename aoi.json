@@ -1,0 +1,64 @@
+{
+  "name": "Word Grid & WordSeek Bot",
+  "description": "All-in-one Telegram Dual Word Game Bot combining 3D Word Grid Arcade and WordSeek (Wordle 4L/5L/6L + Daily Mode), powered by Kurigram & MongoDB.",
+  "branch": "main",
+  "start_command": "python run.py",
+  "requirements_file": "requirements.txt",
+  "buildpacks": ["gcc"],
+  "apt_packages": [],
+  "recommended_ram": 512,
+  "env": {
+    "API_ID": {
+      "description": "Telegram API ID from https://my.telegram.org",
+      "placeholder": "12345678",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Telegram API Hash from https://my.telegram.org",
+      "placeholder": "your_api_hash",
+      "required": true,
+      "secret": true
+    },
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "placeholder": "123456789:AA...",
+      "required": true,
+      "secret": true
+    },
+    "MONGO_URI": {
+      "description": "MongoDB Atlas connection string",
+      "placeholder": "mongodb+srv://user:pass@cluster.mongodb.net/?retryWrites=true&w=majority",
+      "required": true,
+      "secret": true
+    },
+    "DB_NAME": {
+      "description": "MongoDB database name",
+      "value": "WordGridBotDB",
+      "required": false
+    },
+    "SUDO_USERS": {
+      "description": "Comma-separated Admin Telegram numeric user IDs",
+      "placeholder": "123456789,987654321",
+      "required": false
+    },
+    "SUPPORT_GROUP": {
+      "description": "Support group URL",
+      "value": "https://t.me/Telegram",
+      "required": false
+    },
+    "UPDATE_CHANNEL": {
+      "description": "Updates channel URL",
+      "value": "https://t.me/Telegram",
+      "required": false
+    },
+    "TIME_ZONE": {
+      "description": "IANA timezone for daily WordSeek resets",
+      "value": "Asia/Kolkata",
+      "required": false
+    },
+    "BOT_USERNAMES": {
+      "description": "Optional extra/collectible bot usernames (comma-separated, without @)",
+      "required": false
+    }
+  }
+}
